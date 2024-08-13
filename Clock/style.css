@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    font-size: 0.7rem;
+  font-weight: bolder;
+  }
+  body {
+    background: #feffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    width: 32rem;
+    height: 32rem;
+    background: #e0f7fa;
+    border-radius: 5rem;
+    position: relative; /*so that i can postition inside divs relative to the container*/
+    box-shadow: 1rem 1rem 0 0 rgb(191, 194, 194);
+    border: 0.4rem;  
+  }
+  .container .numbers {
+    --rotateAngle: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotateAngle));
+    font-size: 2.5rem;
+    padding: 0.7rem;
+  }
+  .container .num1 {
+    --rotateAngle: 30deg;
+  }
+  .container .num2 {
+    --rotateAngle: 60deg;
+  }
+  .container .num3 {
+    --rotateAngle: 90deg;
+    color: rgb(4, 74, 236);
+  }
+  .container .num4 {
+    --rotateAngle: 120deg;
+  }
+  .container .num5 {
+    --rotateAngle: 150deg;
+  }
+  .container .num6 {
+    --rotateAngle: 180deg;
+    color: rgb(4, 74, 236);
+  }
+  .container .num7 {
+    --rotateAngle: 210deg;
+  }
+  .container .num8 {
+    --rotateAngle: 240deg;
+  }
+  .container .num9 {
+    --rotateAngle: 270deg;
+    color: rgb(4, 74, 236);
+  }
+  .container .num10 {
+    --rotateAngle: 300deg;
+  }
+  .container .num11 {
+    --rotateAngle: 330deg;
+  }
+  .container .num12{
+    color: rgb(4, 74, 236);
+  }
+  
+  .container .numbers .undo {
+      --undoAngle : 0;
+      transform: rotate(var(--undoAngle));
+  }
+  .container .num1 .undo { --undoAngle : -30deg; }
+  .container .num2 .undo { --undoAngle : -60deg; }
+  .container .num3 .undo { --undoAngle : -90deg; }
+  .container .num4 .undo { --undoAngle : -120deg; }
+  .container .num5 .undo { --undoAngle : -150deg; }
+  .container .num6 .undo { --undoAngle : -180deg; }
+  .container .num7 .undo { --undoAngle : -210deg; }
+  .container .num8 .undo { --undoAngle : -240deg; }
+  .container .num9 .undo { --undoAngle : -270deg; }
+  .container .num10 .undo { --undoAngle : -300deg; }
+  .container .num11 .undo { --undoAngle : -330deg; }
+  
+  .container .hand {
+    background-color: black;
+    width: 10px;
+    height: 40px;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    z-index: 10;
+    border-radius: 1rem;
+  }
+  .container .hours {
+    width: 1rem;
+    height: 10rem;
+    background-color:red;
+  }
+  .container .minutes {
+    width: 0.5rem;
+    height: 10rem;
+    background-color: #002c3d;
+  }
+  .container .seconds {
+    width: 0.3rem;
+    height: 12rem;
+    background-color: rgba(21, 75, 1, 0.87);
+  }
+  .container::after {
+    content: "";
+    position: absolute;
+    background-color: rgb(243, 125, 7);
+    z-index: 10;
+    width: 2rem;
+    height: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5rem;
+  }
+  /* Weekday and Date display */
+  .weekday, .date {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    top: 6rem;
+    left: 10rem;
+    color: #333;
+  }
+  
+  .date {
+    top: 6rem;
+    left: 21rem;
+    font-size: 2rem;
+    color: #e00753;
+  }
